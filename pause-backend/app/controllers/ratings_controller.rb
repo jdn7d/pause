@@ -16,12 +16,17 @@ class RatingsController < ApplicationController
   def create
     meditation = Mditation.find_by_id(params[:meditation_id])
     rating = Rating.create(rating: rating, meditation: meditation)
-    render json: rating, include: [:meditation]
+    if meditation.rating do 
+      rating = Rating.create(rating: rating, meditation: meditation)
+      render json: rating, include: [:meditation]
+    else 
+      render json: { error: "This meditation has no ratings."}
+    end
   end
 
   def destroy
     rating = Rating.find_by_id(params[:id])
-    Rating.destroy
+    rating.destroy
     render json: rating, include: [:meditation]
   end
 end

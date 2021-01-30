@@ -5,15 +5,14 @@ Meditation.delete_all
 Meditaton.delete_all
 
 meditation_title = [
-  'Stress Relief',
-  'Handling Anxiety',
-  'Pain Management',
-  'Affirmations',
-  'Breathe',
+  ['Stress Relief', 3]
+  ['Handling Anxiety', 5]
+  ['Pain Management', 3]
+  ['Affirmations', 3] 
+  ['Breathe', 1]
 ]
 
-meditation_collection = []
 
 meditation_title.each do |title|
-  meditation_collection << Meditation.create(title: title)
+   Meditation.create(title: title)
 end
