@@ -1,18 +1,31 @@
 Meditation.delete_all 
 
-# create meditation data
+Meditation.create!([{
+   title: "Stress Relief",
+   duration: 3 },
+   {
+   title: "Handling Anxiety",
+   duration: 5 },
+   {
+   title: "Pain Management",
+   duration: 3 },
+   {
+   title: "Affirmations",
+   duration: 3 },
+   {
+   title: "Breathe",
+   duration: 1
+}])
 
-Meditaton.delete_all
-
-meditation_title = [
-  ['Stress Relief', 3]
-  ['Handling Anxiety', 5]
-  ['Pain Management', 3]
-  ['Affirmations', 3] 
-  ['Breathe', 1]
-]
+# meditation_title = [
+#   ['Stress Relief', 3]
+#   ['Handling Anxiety', 5]
+#   ['Pain Management', 3]
+#   ['Affirmations', 3] 
+#   ['Breathe', 1]
+# ]
 
 
-meditation_title.each do |title|
-   Meditation.create(title: title)
-end
+# meditation_title.each do |title|
+#    Meditation.create(title: title, duration: duration)
+# end
