@@ -10,22 +10,23 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2021_01_25_172919) do
+ActiveRecord::Schema.define(version: 2021_02_02_161527) do
+
+  create_table "comments", force: :cascade do |t|
+    t.integer "content"
+    t.integer "meditation_id", null: false
+    t.datetime "created_at", precision: 6, null: false
+    t.datetime "updated_at", precision: 6, null: false
+    t.index ["meditation_id"], name: "index_comments_on_meditation_id"
+  end
 
   create_table "meditations", force: :cascade do |t|
     t.string "title"
     t.string "duration"
     t.datetime "created_at", precision: 6, null: false
     t.datetime "updated_at", precision: 6, null: false
+    t.text "content"
   end
 
-  create_table "ratings", force: :cascade do |t|
-    t.integer "rating"
-    t.integer "meditation_id", null: false
-    t.datetime "created_at", precision: 6, null: false
-    t.datetime "updated_at", precision: 6, null: false
-    t.index ["meditation_id"], name: "index_ratings_on_meditation_id"
-  end
-
-  add_foreign_key "ratings", "meditations"
+  add_foreign_key "comments", "meditations"
 end
