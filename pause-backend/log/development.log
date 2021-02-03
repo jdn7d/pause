@@ -1144,3 +1144,168 @@ Processing by MeditationsController#index as */*
 Completed 200 OK in 65ms (Views: 60.0ms | ActiveRecord: 4.4ms | Allocations: 1517)
 
 
+Started GET "/meditations" for ::1 at 2021-02-03 15:26:58 -0600
+  [1m[35m (1.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.6ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 36ms (Views: 23.9ms | ActiveRecord: 3.2ms | Allocations: 7101)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:30:44 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (4.9ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 50ms (Views: 43.8ms | ActiveRecord: 4.9ms | Allocations: 1534)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:33:50 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (2.6ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 8.5ms | ActiveRecord: 2.6ms | Allocations: 1534)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:34:27 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 45ms (Views: 38.8ms | ActiveRecord: 1.3ms | Allocations: 1534)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:35:52 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 7ms (Views: 6.0ms | ActiveRecord: 0.8ms | Allocations: 1534)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:36:11 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (3.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 52ms (Views: 47.4ms | ActiveRecord: 3.7ms | Allocations: 1517)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:36:19 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 53ms (Views: 50.6ms | ActiveRecord: 1.2ms | Allocations: 1517)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:47:12 -0600
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.9ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 24ms (Views: 19.2ms | ActiveRecord: 1.9ms | Allocations: 1538)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:47:15 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (2.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 25ms (Views: 22.0ms | ActiveRecord: 2.5ms | Allocations: 1517)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:47:16 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 13ms (Views: 11.0ms | ActiveRecord: 0.8ms | Allocations: 1517)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:47:47 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.9ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.9ms | Allocations: 1517)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:49:59 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (2.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 15.3ms | ActiveRecord: 2.8ms | Allocations: 1517)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:50:00 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 48ms (Views: 42.3ms | ActiveRecord: 1.7ms | Allocations: 1517)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:50:00 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 40ms (Views: 35.7ms | ActiveRecord: 1.4ms | Allocations: 1518)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:50:59 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (4.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 49ms (Views: 42.5ms | ActiveRecord: 4.4ms | Allocations: 1517)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:51:00 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 18ms (Views: 16.1ms | ActiveRecord: 1.0ms | Allocations: 1517)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:51:00 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.9ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 14ms (Views: 12.5ms | ActiveRecord: 0.9ms | Allocations: 1517)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:51:46 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.9ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 24ms (Views: 21.5ms | ActiveRecord: 1.9ms | Allocations: 1517)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 15:52:10 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 1.1ms | Allocations: 1517)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 16:02:46 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.9ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 50ms (Views: 45.8ms | ActiveRecord: 1.9ms | Allocations: 1537)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 16:03:22 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 21ms (Views: 16.4ms | ActiveRecord: 1.7ms | Allocations: 1517)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 16:03:40 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.6ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.6ms | Allocations: 1517)
+
+
+Started GET "/meditations" for ::1 at 2021-02-03 16:05:18 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 20ms (Views: 17.6ms | ActiveRecord: 1.1ms | Allocations: 1517)
+
+
