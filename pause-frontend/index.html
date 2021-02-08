@@ -2,22 +2,56 @@
 <html lang="en" dir="ltr">
   <head>
     <link rel="stylesheet" href="styles/index.css">
+    <!--<link rel="stylesheet" href="styles/bubble.css">
     <!-- Assign all scripts here, make sure they're all deferred so html loads first -->
     <script defer src="src/services/api.js"></script>
-    <!-- <script defer src="src/components/trainer-card.js"></script>
-    <script defer src="scripts/models/pokemon.js"></script>
-    <script defer src="scripts/models/trainer.js"></script> --> -->
-    <!-- ALWAYS load the index.js last -->
+    <script defer src="src/components/meditationList.js"></script>
+    <script defer src="src/components/addComment.js"></script>
+    <script defer src="src/models/meditation.js"></script>
+    <script defer src="src/models/comment.js"></script>
     <script defer src="src/index.js"></script>
+    <!-- <script defer src="src/components/trainer-card.js"></script>
+ <!-- ALWAYS load the index.js last -->
+   
     <meta charset="utf-8">
-    <title>Pokemon Teams</title>
+    <title>Meditations</title>
   </head>
   <body>
     <header>
-      <h2>Pokemon Teams!</h2>
+      <h1>Meditations</h1>
     </header>
 
-    <main>
+      <main>
+    <div id="meditations-list">
+      <h2>       </h2> 
+    </div>
+
+    <div id="meditation-content-display">
+      
+    </div>
+
+    <div id="meditation-controls-container">
+      <button id="pause-play-button">Pause</button>
+      <button id="end-button">End</button>
+    </div>
+
+    <div id="comment-list">
+    
+    </div>
+
+    <form id="comment-form" action="">
+      <input type='text' name="comment" id="comment-input" cols="30" rows="10">
+      <button id="add-comment-button">Add Comment</button> 
+    </form>
+
+
+   
+   
+    </div>
+
+
+
+  
     </main>
 
   </body>

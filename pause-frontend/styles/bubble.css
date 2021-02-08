@@ -1,0 +1,98 @@
+
+
+/* .color-pickers {
+    display: flex;
+    align-items: center;
+    margin: 35px;
+    color: var(--black-primary);
+    font-size: 1rem;
+}
+.color-pickers input {
+    margin: 3px;
+    cursor: pointer;
+} */
+
+.bubble-wrapper {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: 300px;
+    width: 300px;
+    animation: breathe var(--breathe-time) ease-in-out alternate infinite;
+}
+
+.outer-circle, .spinning-circle {
+    position: relative;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    height: calc(100% - 2px);
+    width: calc(100% - 2px);
+    border: 1px solid var(--bubble-primary);
+    border-radius: 50%;
+    overflow: hidden;
+}
+
+.spinning-circle {
+    position: absolute;
+    border: transparent;
+    animation: spin calc(var(--breathe-time) * 2) linear infinite;
+}
+
+.paused {
+    animation-play-state: paused;
+}
+
+.half-circle {
+    position: absolute;
+    left: calc(50% - 10px);
+    height: 20px;
+    width: 20px;
+    background-color: var(--bubble-primary-lighter);
+    border-radius: 50%;
+}
+
+.half-circle.bottom {
+    bottom: -10px;
+}
+
+.half-circle.top {
+    top: -10px;
+}
+
+.half-circle.top.darker {
+    background-color: var(--bubble-primary);
+}
+
+.breathe-bubble {
+    position: absolute;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    width: 90%;
+    height: 90%;
+    border-radius: 50%;
+    border: none;
+    background: radial-gradient(var(--bubble-primary), var(--bubble-secondary));
+    font-size: 1.125rem;
+    font-weight: 300;
+    letter-spacing: .125rem;
+}
+
+@keyframes breathe {
+    0% {
+        transform: scale(0.7);
+    }
+    100% {
+        transform: scale(1);
+    }
+}
+
+@keyframes spin {
+    0% {
+        transform: rotate(0deg);
+    }
+    100% {
+        transform: rotate(360deg);
+    }
+}

@@ -1,7 +1,7 @@
 class API {
    
    // constructor
-   constructor(port = 3000 ){
+   constructor(port = 3000){
       this.url = `http://localhost:${port}`
    }
 
@@ -15,8 +15,8 @@ class API {
       return this.url + '/meditations'
    }
    
-   get ratingURL(){
-     return this.url + '/ratings'
+   get commentURL(){
+      return this.url + '/comments'
    }
 
    // fetches
@@ -29,24 +29,24 @@ class API {
       return fetch(this.meditationURL + `/${id}`).then(this.parseJSON)
    }
 
-   fetchRatings = () => {
-      return fetch(this.ratingURL).then(this.parseJSON)
+   fetchComments = () => {
+      return fetch(this.commentURL).then(this.parseJSON)
    }
       
-   fetchRating = (id) => {
-      return fetch(this.ratingURL + `/${id}`).then(this.parseJSON)
+   fetchComment = (id) => {
+      return fetch(this.commentURL + `/${id}`).then(this.parseJSON)
    }
    
-   postRating = (meditationId) => {
-      return fetch(this.ratingURL, {
+   postComment = (meditationId, content) => {
+      return fetch(this.commentURL, {
          method: "POST",
          headers: this.headers,
-         body: JSON.stringify({meditation_id: meditationId }) // add other attributes
+         body: JSON.stringify({meditation_id: meditationId, content: content }) // add other attributes
       }).then(this.parseJSON)
    }
    
-   deleteRating = (id) => {
-      return fetch(this.ratingURL + `/${id}`, {
+   deleteComment = (id) => {
+      return fetch(this.commentURL + `/${id}`, {
          method: "DELETE", 
          headers: this.headers 
       }).then(this.parseJSON)

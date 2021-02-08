@@ -1,16 +1,12 @@
 class CommentsController < ApplicationController
    def index
-    let comments = Comment.all
-    render json: comments, include: [:meditation]
+    comments = Comment.all
+    render json: CommentSerializer.new(comment).to_serialized_json
   end
 
   def show
     comment = Comment.find_by_id(params[:id])
-    if !comment
-      render json: { error: "No comment by that ID", status: 400 }, status: 400
-    else
-      render json: comment, include: [:meditation]
-    end
+    render json: CommentSerializer.new(comment).to_serialized_json
   end
 
   def create
