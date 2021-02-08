@@ -75,7 +75,7 @@ class MeditationList {
          controlButtons.style.display = "none"
              
          commentForm.addEventListener("submit", meditation.createComment)
-         console.log("hey")
+ 
          let comList = new commentList(this, this.comment)
          // show comments   
       }
