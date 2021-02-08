@@ -1,6 +1,0 @@
-class CommentList {
-
-   constructor(){
-
-   }
-}

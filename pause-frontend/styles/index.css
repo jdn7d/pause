@@ -17,6 +17,10 @@ body {
     padding-right: 20px;
   }
 
+  #meditations-list {
+    font-size: 2.0em
+  }
+
   #meditation-controls-container {
     display: none;
   }
@@ -29,11 +33,13 @@ body {
     display: none;
   }
 
+
   button {
-    font-size: .65em;
+    font-size: 1.0em;
     color: #fff;
     background-color: green;
     border-radius: 10px;
+    
   }
 
   button.release {

@@ -29,7 +29,7 @@ class MeditationList {
 
          let i = {count: 0}
          const parsedContent = meditation.content.split("/")
-         const contentTime = 1000
+         const contentTime = 3500
          showMeditation = setInterval(playContent, contentTime, parsedContent, i) 
          
 
@@ -39,7 +39,9 @@ class MeditationList {
             i["count"] +=1
             if (i["count"] > (parsedContent.length)) {
                meditationEnd(showMeditation, meditation)
-            }   
+               myMove() 
+            }
+            
          }
 
          // Pause Meditation 
@@ -102,9 +104,23 @@ class MeditationList {
       button.addEventListener('click', function(e) {
          playMeditation(e, meditation)
       })
+
+      // Create bubble 
+      function myMove() {
+         var elem = document.getElementById("breathing-bubble")
+         var pos = 0
+         var id = setInterval(frame, 10)
+         function frame() {
+            if (pos == 350) {
+               clearInterval(id)
+            } else {
+            pos++
+            elem.style.top = pos + 'px'
+            elem.style.left = pos + 'px' 
+            }
+         }
+      }
       
-  
-     
    }
 }
  
