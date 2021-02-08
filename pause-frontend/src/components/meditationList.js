@@ -75,8 +75,8 @@ class MeditationList {
              
          commentForm.addEventListener("submit", meditation.createComment)
              console.log("this")
-         console.log(this)
-         let comList = new commentList(meditation, meditation.comment)
+         console.log(meditation.comments)
+         //let comList = new commentList(meditation, meditation.comment)
          // show comments   
       }
 
