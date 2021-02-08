@@ -38,8 +38,7 @@ class MeditationList {
             medDisplay.innerText = parsedContent[i["count"]]
             i["count"] +=1
             if (i["count"] > (parsedContent.length)) {
-               console.log(meditation.title)
-               meditationEnd(showMeditation)
+               meditationEnd(showMeditation, meditation)
             }   
          }
 
@@ -67,7 +66,7 @@ class MeditationList {
       }
 
       // Show page after meditation runs, includes new comment form and list of comments 
-      function meditationEnd(showMeditation) {
+      function meditationEnd(showMeditation, meditation) {
          clearInterval(showMeditation)
          medDisplay.innerText = "Add Comment"
          commentForm.style.display = "block"
@@ -75,8 +74,9 @@ class MeditationList {
          controlButtons.style.display = "none"
              
          commentForm.addEventListener("submit", meditation.createComment)
- 
-         let comList = new commentList(this, this.comment)
+             console.log("this")
+         console.log(this)
+         let comList = new commentList(meditation, meditation.comment)
          // show comments   
       }
 
