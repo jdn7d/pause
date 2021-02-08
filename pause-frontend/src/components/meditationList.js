@@ -72,20 +72,24 @@ class MeditationList {
          commentForm.style.display = "block"
          addCommentButton.style.display = "block"
          controlButtons.style.display = "none"
-             
+         displayComments(meditation) 
+
+         // Submit new comment
          commentForm.addEventListener("submit", meditation.createComment)
-             console.log("this")
-         console.log(meditation.comments)
+      
          //let comList = new commentList(meditation, meditation.comment)
-         // show comments   
+    
       }
 
       // Display comments on Meditation show page 
       function displayComments(meditation) {
-         console.log(meditation)
+         console.log(meditation.comments)
          meditation.commentSection = document.createElement('ul')
-         for (const comment of meditation.comments) {const li = document.createElement("li")
+         for (const comment of meditation.comments) {
+         const li = document.createElement("li")
          meditation.commentSection.append(li)
+         li.innerText = `${comment.content}`
+         commentList.append(meditation.commentSection)
          }
       }
 
@@ -103,4 +107,4 @@ class MeditationList {
      
    }
 }
-  
+ 

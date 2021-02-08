@@ -32,7 +32,6 @@ class Meditation {
    // Populate list of comments on meditation show page 
    addCommentToMed = (comment) => {
       comment.meditation = this
-      console.log(comment.meditation)
       this.commentSection = document.createElement('ul')
       const li = document.createElement("li")
       this.commentSection.append(li)
