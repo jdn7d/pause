@@ -24,6 +24,7 @@ class MeditationList {
          meditationsList.style.display = "none"
          medDisplay.style.display = "block"
          controlButtons.style.display = "block"
+         bubble.style.display = "block"
          endButton.addEventListener('click', stopInterval) 
          pausePlayButton.addEventListener('click', pauseInterval)
          medDisplay.innerText = "Welcome"
@@ -119,23 +120,23 @@ class MeditationList {
       // Create bubble 
       function expand() {
        let size = 100
-         var id = setInterval(frame, 28)
+         var id = setInterval(frame, 36)
        
          function frame() {
-            if (size == 250) {
+            if (size == 197) {
                clearInterval(id) 
             } else {
             size ++
             bubble.style.height = size + 'px'
             bubble.style.width = size + 'px'
-            console.log("inc")
+            console.log(size)
             }
           }
          
          }
       function shrink() {
-         let size = 250
-         var id = setInterval(frame, 28)
+         let size = 197
+         var id = setInterval(frame, 36)
          function frame() { 
             if (size == 100) {
                clearInterval(id)
@@ -143,7 +144,7 @@ class MeditationList {
             size = size - 1
             bubble.style.height = size + 'px'
             bubble.style.width = size + 'px'
-            console.log("dec")
+            console.log(size)
             }
          }
       }
