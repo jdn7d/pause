@@ -1,15 +1,12 @@
 #breathing-bubble {
     width: 100px;
-  height: 100px;
+    height: 100px;
     padding: 20px;
     margin: 50px auto;
     border: 1px solid #d1d1d1; 
-    -webkit-animation: breathing 7s ease-out infinite normal;
-    animation: breathing 7s ease-out infinite normal;
     font-size: 24px;
     background: #5885cb;
     color: #fff;
-    -webkit-font-smoothing: antialiased;
     border-radius: 50%;
     text-align: center;    
     }

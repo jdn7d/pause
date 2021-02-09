@@ -26,7 +26,7 @@ class MeditationList {
          controlButtons.style.display = "block"
          endButton.addEventListener('click', stopInterval) 
          pausePlayButton.addEventListener('click', pauseInterval)
-
+         medDisplay.innerText = "Welcome"
          let i = {count: 0}
          const parsedContent = meditation.content.split("/")
          const contentTime = 3500
@@ -36,10 +36,12 @@ class MeditationList {
          // Play Meditation 
          function playContent(parsedContent, i) {
             medDisplay.innerText = parsedContent[i["count"]]
+         
             i["count"] +=1
             if (i["count"] > (parsedContent.length)) {
+               
                meditationEnd(showMeditation, meditation)
-               myMove() 
+              
             }
             
          }
@@ -106,18 +108,28 @@ class MeditationList {
       })
 
       // Create bubble 
-      function myMove() {
+      function expand() {
          var elem = document.getElementById("breathing-bubble")
-         var pos = 0
+         var size = 0
+         console.log(elem)
          var id = setInterval(frame, 10)
          function frame() {
-            if (pos == 350) {
-               clearInterval(id)
+            if (size < 100) {
+               size ++
+               elem.style.height = size + 'px'
+                   elem.style.width = size + 'px'
             } else {
-            pos++
-            elem.style.top = pos + 'px'
-            elem.style.left = pos + 'px' 
+               clearInterval(id)
+              var a = setInterval(shrink, 10)
             }
+         }
+      }
+
+      function shrink(size) {
+         while (size < 0) {
+            size = size - 1
+            elem.style.height = size + 'px'
+                elem.style.width = size + 'px'
          }
       }
       
