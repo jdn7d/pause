@@ -119,7 +119,7 @@ class MeditationList {
       // Create bubble 
       function expand() {
        let size = 100
-         var id = setInterval(frame, 10)
+         var id = setInterval(frame, 34)
        
          function frame() {
             if (size == 200) {
