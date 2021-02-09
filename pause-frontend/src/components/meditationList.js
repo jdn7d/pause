@@ -6,7 +6,7 @@ const pausePlayButton = document.querySelector("#pause-play-button")
 const commentForm = document.querySelector("#comment-form")
 const addCommentButton = document.querySelector("#add-comment-button")
 const commentList = document.querySelector("#comment-list")
-
+const bubble = document.querySelector("#breathing-bubble")
 
 let showMeditation = {}
 let currentContent = {}
@@ -35,8 +35,15 @@ class MeditationList {
 
          // Play Meditation 
          function playContent(parsedContent, i) {
+            
             medDisplay.innerText = parsedContent[i["count"]]
-         
+            
+             if (i["count"]%2 === 0) {
+               expand()     
+             }
+             else {
+               shrink() 
+             }
             i["count"] +=1
             if (i["count"] > (parsedContent.length)) {
                
@@ -107,30 +114,30 @@ class MeditationList {
          playMeditation(e, meditation)
       })
 
+   
+
       // Create bubble 
       function expand() {
-         var elem = document.getElementById("breathing-bubble")
-         var size = 0
-         console.log(elem)
+       let size = 100
          var id = setInterval(frame, 10)
+       
          function frame() {
-            if (size < 100) {
-               size ++
-               elem.style.height = size + 'px'
-                   elem.style.width = size + 'px'
-            } else {
-               clearInterval(id)
-              var a = setInterval(shrink, 10)
-            }
+            size ++
+            bubble.style.height = size + 'px'
+            bubble.style.width = size + 'px'
+            console.log("inc")
+            clearInterval(id)
+         } 
+         
          }
-      }
-
-      function shrink(size) {
-         while (size < 0) {
-            size = size - 1
-            elem.style.height = size + 'px'
-                elem.style.width = size + 'px'
-         }
+      function shrink() {
+        var id = setInterval(frame, 10)
+            let size = 200
+            size --
+            bubble.style.height = size + 'px'
+            bubble.style.width = size + 'px'
+            console.log("dec")
+            clearInterval(id)
       }
       
    }
