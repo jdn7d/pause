@@ -122,22 +122,30 @@ class MeditationList {
          var id = setInterval(frame, 10)
        
          function frame() {
+            if (size == 200) {
+               clearInterval(id) 
+            } else {
             size ++
             bubble.style.height = size + 'px'
             bubble.style.width = size + 'px'
             console.log("inc")
-            clearInterval(id)
-         } 
+            }
+          }
          
          }
       function shrink() {
-        var id = setInterval(frame, 10)
-            let size = 200
-            size --
+         let size = 200
+         var id = setInterval(frame, 35)
+         function frame() { 
+            if (size == 100) {
+               clearInterval(id)
+            } else {   
+            size = size - 1
             bubble.style.height = size + 'px'
             bubble.style.width = size + 'px'
             console.log("dec")
-            clearInterval(id)
+            }
+         }
       }
       
    }
