@@ -25,6 +25,12 @@ body {
     display: none;
   }
 
+  #meditation-content-display {
+     font-size: 2em;
+     text-align: center;
+
+   
+  }
   #add-comment {
     display: none;
   }
@@ -58,3 +64,6 @@ body {
       grid-template-columns: 1fr 1fr 1fr 1fr;
     }
   }
+
+
+

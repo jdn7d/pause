@@ -79,7 +79,7 @@ class MeditationList {
       // Show page after meditation runs, includes new comment form and list of comments 
       function meditationEnd(showMeditation, meditation) {
          clearInterval(showMeditation)
-         medDisplay.innerText = "Add Comment"
+         
          commentForm.style.display = "block"
          addCommentButton.style.display = "block"
          controlButtons.style.display = "none"
@@ -87,7 +87,7 @@ class MeditationList {
 
          // Submit new comment
          commentForm.addEventListener("submit", meditation.createComment)
-      
+         medDisplay.style.display = "none"
          //let comList = new commentList(meditation, meditation.comment)
     
       }
@@ -119,10 +119,10 @@ class MeditationList {
       // Create bubble 
       function expand() {
        let size = 100
-         var id = setInterval(frame, 34)
+         var id = setInterval(frame, 28)
        
          function frame() {
-            if (size == 200) {
+            if (size == 250) {
                clearInterval(id) 
             } else {
             size ++
@@ -134,8 +134,8 @@ class MeditationList {
          
          }
       function shrink() {
-         let size = 200
-         var id = setInterval(frame, 35)
+         let size = 250
+         var id = setInterval(frame, 28)
          function frame() { 
             if (size == 100) {
                clearInterval(id)
