@@ -86,7 +86,7 @@ class MeditationList {
          commentForm.style.display = "block"
          addCommentButton.style.display = "block"
          controlButtons.style.display = "none"
-         bubble.style.display = "block"
+         bubble.style.display = "none"
          displayComments(meditation) 
 
          // Submit new comment
@@ -111,7 +111,7 @@ class MeditationList {
    
       // Create list of meditations as buttons
       const button = document.createElement("menuOptions")
-      button.innerText = `${meditation.title} `
+      button.innerText = `${meditation.title}`
       
       meditationsList.appendChild(button) 
       button.addEventListener('click', function(e) {
