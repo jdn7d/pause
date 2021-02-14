@@ -73,6 +73,8 @@ class MeditationList {
             clearInterval(showMeditation)
             meditationsList.style.display = "block"
             medDisplay.style.display = "none"
+            bubble.style.display = "none"
+            controlButtons.style.display = "none"
             // hide the meditation controller buttons 
          }
       }
@@ -84,6 +86,7 @@ class MeditationList {
          commentForm.style.display = "block"
          addCommentButton.style.display = "block"
          controlButtons.style.display = "none"
+         bubble.style.display = "block"
          displayComments(meditation) 
 
          // Submit new comment
@@ -107,7 +110,7 @@ class MeditationList {
 
    
       // Create list of meditations as buttons
-      const button = document.createElement("button")
+      const button = document.createElement("menuOptions")
       button.innerText = `${meditation.title} `
       
       meditationsList.appendChild(button) 

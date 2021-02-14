@@ -3,6 +3,8 @@
   <head>
     <link rel="stylesheet" href="styles/index.css">
     <link rel="stylesheet" href="styles/bubble.css">
+<link rel="preconnect" href="https://fonts.gstatic.com">
+<link href="https://fonts.googleapis.com/css2?family=Merriweather:wght@300&family=Quicksand:wght@300;400&family=Sora:wght@100&family=Tenor+Sans&display=swap" rel="stylesheet">
     <!-- Assign all scripts here, make sure they're all deferred so html loads first -->
     <script defer src="src/services/api.js"></script>
     <script defer src="src/components/meditationList.js"></script>
@@ -18,13 +20,14 @@
   </head>
   <body>
     <header>
-      <h1>Meditations</h1>
+      <h1>Pause</h1>
+
+      <div id="meditations-list"></div>
+
     </header>
 
       <main>
-    <div id="meditations-list">
-      <h2>       </h2> 
-    </div>
+   
 
     <div id="meditation-content-display">
       
@@ -43,7 +46,7 @@
     <div id="comment-list">
     </div>
    
-    <div id="breathing-bubble">Breathing Bubble</div>
+    <div id="breathing-bubble"></div>
    
     </div>
 
