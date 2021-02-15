@@ -2,7 +2,7 @@
     width: 100px;
     height: 100px;
     padding: 20px;
-    margin: 50px auto;
+    margin: 170px auto;
     border: 1px solid #d1d1d1; 
     font-size: 24px;
     background: #5885cb;
@@ -10,6 +10,7 @@
     border-radius: 50%;
     text-align: center;  
     display: none;  
+ 
     }
 /* 
 
