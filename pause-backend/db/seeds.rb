@@ -1,25 +1,20 @@
 Meditation.delete_all 
 
 Meditation.create!([{
-   title: "Breathing",
+   title: "Breathing    ",
    duration: 3,
    content: "Inhale/Exhale/Inhale/Exhale" },
 
    {
-   title: "Handling Anxiety",
+   title: "Handling Anxiety    ",
    duration: 5,
-   content: "Begin in a comfortable seated position/Feel rooted, safe, and comfortable through your seat/
-   Once you’re settled, soften your gaze/Relax the muscles in your face/
-   Take a deep breath in through your nose/And out through your mouth/
-   1/2/3/4/
-   As you inhale, imagine that you are breathing in calmness/As you exhale, imagine that you are breathing out your anxiety/
-   Inhale peace and clarity/Exhale stress and worry/
+   content: "Begin in a comfortable seated position/Feel rooted, safe, and comfortable through your seat/Once you’re settled, soften your gaze/Relax the muscles in your face/Take a deep breath in through your nose/And out through your mouth/1/2/3/4/As you inhale, imagine that you are breathing in calmness/As you exhale, imagine that you are breathing out your anxiety/Inhale peace and clarity/Exhale stress and worry/
    Inhale/Feel your anxiety slip away with each exhale/
    Inhale/Exhale/
    Your mind may drift to feelings of worry/This is okay, be mindful/
    Without judgment, gently bring your attention back to the breath/Notice how calm you feel as you sit and breathe"},
    {
-   title: "Pain Management",
+   title: "Pain Management    ",
    duration: 3,
    content: "Take a breath in/Exhale/Settle into a comfortable position/Notice how you are feeling in this moment/Observe your body and mind/
    Pain management begins with observation./Where is most of your tension stored?/Where is your pain located?/What part of your body is most relaxed?/Take a deep breath in.... now exhale./

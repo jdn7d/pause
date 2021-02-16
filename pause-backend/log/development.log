@@ -23035,3 +23035,1609 @@ Completed 200 OK in 351ms (Views: 318.0ms | ActiveRecord: 30.9ms | Allocations: 
 Completed 200 OK in 405ms (Views: 1.1ms | ActiveRecord: 18.2ms | Allocations: 17789)
 
 
+Started GET "/meditations" for ::1 at 2021-02-15 11:59:24 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (5.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (43.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (2.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Started GET "/comments" for ::1 at 2021-02-15 11:59:24 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (4.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 461ms (Views: 406.2ms | ActiveRecord: 54.2ms | Allocations: 11845)
+
+
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (0.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (1.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 226ms (Views: 0.9ms | ActiveRecord: 8.7ms | Allocations: 13136)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:01:17 -0600
+Processing by MeditationsController#index as */*
+Started GET "/comments" for ::1 at 2021-02-15 12:01:17 -0600
+  [1m[36mMeditation Load (1.6ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mMeditation Load (0.9ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 142ms (Views: 128.9ms | ActiveRecord: 7.5ms | Allocations: 12355)
+
+
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (5.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 289ms (Views: 0.3ms | ActiveRecord: 9.7ms | Allocations: 18348)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:02:27 -0600
+Started GET "/comments" for ::1 at 2021-02-15 12:02:27 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (4.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (2.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+Processing by CommentsController#index as */*
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mMeditation Load (1.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 213ms (Views: 200.3ms | ActiveRecord: 11.3ms | Allocations: 9696)
+
+
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (2.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.6ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 376ms (Views: 0.4ms | ActiveRecord: 7.2ms | Allocations: 15569)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:04:11 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Started GET "/comments" for ::1 at 2021-02-15 12:04:11 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (3.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (2.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mMeditation Load (1.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (2.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 280ms (Views: 267.9ms | ActiveRecord: 11.7ms | Allocations: 15688)
+
+
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 225ms (Views: 0.3ms | ActiveRecord: 5.3ms | Allocations: 18328)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:04:19 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (2.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Started GET "/comments" for ::1 at 2021-02-15 12:04:19 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (5.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (4.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 289ms (Views: 280.6ms | ActiveRecord: 7.3ms | Allocations: 17285)
+
+
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 358ms (Views: 0.2ms | ActiveRecord: 11.4ms | Allocations: 16974)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:05:00 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Started GET "/comments" for ::1 at 2021-02-15 12:05:00 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mComment Load (3.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  [1m[36mMeditation Load (5.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 287ms (Views: 275.6ms | ActiveRecord: 11.0ms | Allocations: 11270)
+
+
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 233ms (Views: 0.4ms | ActiveRecord: 9.0ms | Allocations: 15200)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:05:08 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+Started GET "/comments" for ::1 at 2021-02-15 12:05:08 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (0.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 432ms (Views: 416.8ms | ActiveRecord: 7.8ms | Allocations: 14784)
+
+
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 346ms (Views: 0.3ms | ActiveRecord: 4.2ms | Allocations: 15905)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:05:10 -0600
+Started GET "/comments" for ::1 at 2021-02-15 12:05:10 -0600
+Processing by MeditationsController#index as */*
+Processing by CommentsController#index as */*
+  [1m[36mMeditation Load (7.9ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  [1m[36mComment Load (15.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mMeditation Load (1.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+Completed 200 OK in 287ms (Views: 230.6ms | ActiveRecord: 12.9ms | Allocations: 14506)
+
+
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 485ms (Views: 0.8ms | ActiveRecord: 19.0ms | Allocations: 19220)
+
+
+Started GET "/comments" for ::1 at 2021-02-15 12:05:29 -0600
+Started GET "/meditations" for ::1 at 2021-02-15 12:05:29 -0600
+Processing by MeditationsController#index as */*
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (4.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.6ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (3.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (2.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (2.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 338ms (Views: 209.6ms | ActiveRecord: 10.9ms | Allocations: 13254)
+
+
+  [1m[36mMeditation Load (3.9ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 384ms (Views: 0.6ms | ActiveRecord: 11.0ms | Allocations: 19214)
+
+
+Started GET "/comments" for ::1 at 2021-02-15 12:10:22 -0600
+Started GET "/meditations" for ::1 at 2021-02-15 12:10:22 -0600
+Processing by CommentsController#index as */*
+Processing by MeditationsController#index as */*
+  [1m[36mComment Load (8.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (0.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mComment Load (3.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 183ms (Views: 160.2ms | ActiveRecord: 7.5ms | Allocations: 16264)
+
+
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 247ms (Views: 3.9ms | ActiveRecord: 12.2ms | Allocations: 19482)
+
+
+  [1m[35m (60.9ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  [1m[35m (55.9ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (69.3ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (16.3ms)[0m  [1m[35mDROP TABLE IF EXISTS "meditations"[0m
+Started GET "/comments" for ::1 at 2021-02-15 12:10:32 -0600
+Started GET "/meditations" for ::1 at 2021-02-15 12:10:32 -0600
+  [1m[35m (279.4ms)[0m  [1m[35mCREATE TABLE "meditations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "duration" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "content" text)[0m
+Processing by MeditationsController#index as */*
+  [1m[35m (0.6ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Load (15.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[35m (3.0ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acomments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (5.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 175ms (Views: 148.4ms | ActiveRecord: 25.3ms | Allocations: 8103)
+
+
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (2.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[35m (2.6ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_meditation_id" ON "acomments" ("meditation_id")[0m
+  [1m[35m (3.3ms)[0m  [1m[32mINSERT INTO "acomments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "comments"[0m
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[35m (17.8ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35m (1.4ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_509522b747"
+FOREIGN KEY ("meditation_id")
+  REFERENCES "meditations" ("id")
+)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (0.3ms)[0m  [1m[32mINSERT INTO "comments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "acomments"[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE "acomments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[36mMeditation Load (96.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[35m (40.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[35m (60.0ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 460ms (Views: 0.3ms | ActiveRecord: 101.9ms | Allocations: 16218)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (37.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210204234602)[0m
+  [1m[35m (25.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210125172902),
+(20210125172919),
+(20210201195530),
+(20210202161306),
+(20210202161527);
+
+[0m
+  [1m[35m (125.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-15 18:10:33.424854"], ["updated_at", "2021-02-15 18:10:33.424854"]]
+  [1m[35m (24.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "9d3e2d80999ed474fef289186d349df66e7b77c6"], ["created_at", "2021-02-15 18:10:33.491628"], ["updated_at", "2021-02-15 18:10:33.491628"]]
+  [1m[35m (23.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  [1m[35m (23.8ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (31.6ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (1.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "meditations"[0m
+  [1m[35m (56.6ms)[0m  [1m[35mCREATE TABLE "meditations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "duration" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "content" text)[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.5ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.4ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acomments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_meditation_id" ON "acomments" ("meditation_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "acomments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "comments"[0m
+  [1m[35m (3.3ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_509522b747"
+FOREIGN KEY ("meditation_id")
+  REFERENCES "meditations" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "comments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "acomments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "acomments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (14.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (18.5ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (18.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210204234602)[0m
+  [1m[35m (24.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210125172902),
+(20210125172919),
+(20210201195530),
+(20210202161306),
+(20210202161527);
+
+[0m
+  [1m[35m (19.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-15 18:10:33.940081"], ["updated_at", "2021-02-15 18:10:33.940081"]]
+  [1m[35m (17.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (2.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-02-15 18:10:33.979590"], ["key", "environment"]]
+  [1m[35m (16.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (3.0ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "9d3e2d80999ed474fef289186d349df66e7b77c6"], ["created_at", "2021-02-15 18:10:34.018126"], ["updated_at", "2021-02-15 18:10:34.018126"]]
+  [1m[35m (19.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMeditation Destroy (0.5ms)[0m  [1m[31mDELETE FROM "meditations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (4.5ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Breathing    "], ["duration", "3"], ["created_at", "2021-02-15 18:10:34.461167"], ["updated_at", "2021-02-15 18:10:34.461167"], ["content", "Inhale/Exhale/Inhale/Exhale"]]
+  [1m[35m (21.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (2.8ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Handling Anxiety    "], ["duration", "5"], ["created_at", "2021-02-15 18:10:34.504075"], ["updated_at", "2021-02-15 18:10:34.504075"], ["content", "Begin in a comfortable seated position/Feel rooted, safe, and comfortable through your seat/\n   Once you’re settled, soften your gaze/Relax the muscles in your face/\n   Take a deep breath in through your nose/And out through your mouth/\n   1/2/3/4/\n   As you inhale, imagine that you are breathing in calmness/As you exhale, imagine that you are breathing out your anxiety/\n   Inhale peace and clarity/Exhale stress and worry/\n   Inhale/Feel your anxiety slip away with each exhale/\n   Inhale/Exhale/\n   Your mind may drift to feelings of worry/This is okay, be mindful/\n   Without judgment, gently bring your attention back to the breath/Notice how calm you feel as you sit and breathe"]]
+  [1m[35m (86.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (1.0ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (4.5ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pain Management    "], ["duration", "3"], ["created_at", "2021-02-15 18:10:34.613410"], ["updated_at", "2021-02-15 18:10:34.613410"], ["content", "Take a breath in/Exhale/Settle into a comfortable position/Notice how you are feeling in this moment/Observe your body and mind/\n   Pain management begins with observation./Where is most of your tension stored?/Where is your pain located?/What part of your body is most relaxed?/Take a deep breath in.... now exhale./\n   Breathe in.... and out./Continue to breathe slowly, smoothly./Now continue the pain management relaxation with a passive attitude of observing. Do not try to make anything happen. \n   Notice how your whole body feels. Passively observe, not trying to change anything. Simply take note of how your body feels. Take a few moments now to think about the pain you experience.\n   You may not be in pain right now. Just observe the state of your pain in this moment. The way your body feels is always changing. The way you feel is different from moment to moment. \n   A moment from now, you will feel slightly different from the way you feel right now. Just observe. Observe as each moment passes. \n   Although pain is unwanted and difficult to tolerate, try for the next few moments to regard your pain with acceptance. \n   Accept the way you are feeling right now physically and emotionally..... whether positive or negative..... allow your body and mind to just"]]
+  [1m[35m (22.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (4.2ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Affirmations"], ["duration", "3"], ["created_at", "2021-02-15 18:10:34.656362"], ["updated_at", "2021-02-15 18:10:34.656362"]]
+  [1m[35m (21.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (3.0ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Breathe"], ["duration", "1"], ["created_at", "2021-02-15 18:10:34.696371"], ["updated_at", "2021-02-15 18:10:34.696371"]]
+  [1m[35m (20.0ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/comments" for ::1 at 2021-02-15 12:10:39 -0600
+Started GET "/meditations" for ::1 at 2021-02-15 12:10:39 -0600
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MeditationsController#index as */*
+Processing by CommentsController#index as */*
+  [1m[36mMeditation Load (1.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+Completed 200 OK in 104ms (Views: 0.2ms | ActiveRecord: 0.8ms | Allocations: 6735)
+
+
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 144ms (Views: 126.2ms | ActiveRecord: 11.8ms | Allocations: 13229)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:10:47 -0600
+Processing by MeditationsController#index as */*
+Started GET "/comments" for ::1 at 2021-02-15 12:10:47 -0600
+  [1m[36mMeditation Load (7.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 31ms (Views: 0.5ms | ActiveRecord: 1.6ms | Allocations: 1247)
+
+
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 221ms (Views: 203.0ms | ActiveRecord: 13.8ms | Allocations: 7652)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:14:38 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (2.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Started GET "/comments" for ::1 at 2021-02-15 12:14:38 -0600
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 7ms (Views: 0.4ms | ActiveRecord: 0.9ms | Allocations: 656)
+
+
+  [1m[36mComment Load (17.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (8.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (2.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 172ms (Views: 138.0ms | ActiveRecord: 32.8ms | Allocations: 7948)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:14:44 -0600
+Processing by MeditationsController#index as */*
+Started GET "/comments" for ::1 at 2021-02-15 12:14:44 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 9ms (Views: 0.4ms | ActiveRecord: 1.3ms | Allocations: 656)
+
+
+  [1m[36mMeditation Load (47.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (2.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 177ms (Views: 121.0ms | ActiveRecord: 55.1ms | Allocations: 7870)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:14:57 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Started GET "/comments" for ::1 at 2021-02-15 12:14:57 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 5ms (Views: 0.6ms | ActiveRecord: 0.8ms | Allocations: 656)
+
+
+  [1m[36mComment Load (3.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 89ms (Views: 78.7ms | ActiveRecord: 9.4ms | Allocations: 7921)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:15:32 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (0.9ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Started GET "/comments" for ::1 at 2021-02-15 12:15:32 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 24ms (Views: 0.7ms | ActiveRecord: 0.9ms | Allocations: 656)
+
+
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 159ms (Views: 153.7ms | ActiveRecord: 4.9ms | Allocations: 7652)
+
+
+Started POST "/comments" for ::1 at 2021-02-15 12:17:28 -0600
+Processing by CommentsController#create as */*
+  Parameters: {"meditation_id"=>1, "content"=>"sdf", "comment"=>{"content"=>"sdf", "meditation_id"=>1}}
+  [1m[36mMeditation Load (1.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mCACHE Meditation Load (0.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (13.2ms)[0m  [1m[32mINSERT INTO "comments" ("content", "meditation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "sdf"], ["meditation_id", 1], ["created_at", "2021-02-15 18:17:28.762197"], ["updated_at", "2021-02-15 18:17:28.762197"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (32.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 151ms (Views: 4.3ms | ActiveRecord: 51.8ms | Allocations: 8210)
+
+
+Started GET "/comments" for ::1 at 2021-02-15 12:18:46 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (2.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Started GET "/meditations" for ::1 at 2021-02-15 12:18:46 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (3.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (3.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 318ms (Views: 0.4ms | ActiveRecord: 5.9ms | Allocations: 5437)
+
+
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 336ms (Views: 325.7ms | ActiveRecord: 9.3ms | Allocations: 8073)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:18:58 -0600
+Processing by MeditationsController#index as */*
+Started GET "/comments" for ::1 at 2021-02-15 12:18:58 -0600
+  [1m[36mMeditation Load (1.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (3.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+Processing by CommentsController#index as */*
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (3.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 285ms (Views: 271.7ms | ActiveRecord: 11.4ms | Allocations: 7289)
+
+
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (2.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 98ms (Views: 0.3ms | ActiveRecord: 3.4ms | Allocations: 6676)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:19:34 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Started GET "/comments" for ::1 at 2021-02-15 12:19:34 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 122ms (Views: 3.7ms | ActiveRecord: 2.8ms | Allocations: 1694)
+
+
+  [1m[36mComment Load (92.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (3.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 320ms (Views: 218.2ms | ActiveRecord: 100.1ms | Allocations: 9095)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:20:13 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Started GET "/comments" for ::1 at 2021-02-15 12:20:13 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 56ms (Views: 2.6ms | ActiveRecord: 2.4ms | Allocations: 1664)
+
+
+  [1m[36mComment Load (92.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (11.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (2.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 360ms (Views: 249.2ms | ActiveRecord: 109.9ms | Allocations: 9095)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:20:44 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+Started GET "/comments" for ::1 at 2021-02-15 12:20:44 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (6.6ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 78ms (Views: 0.6ms | ActiveRecord: 7.9ms | Allocations: 1667)
+
+
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (2.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 309ms (Views: 296.7ms | ActiveRecord: 11.0ms | Allocations: 8801)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:21:12 -0600
+Processing by MeditationsController#index as */*
+Started GET "/comments" for ::1 at 2021-02-15 12:21:12 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 132ms (Views: 0.4ms | ActiveRecord: 2.7ms | Allocations: 1667)
+
+
+  [1m[36mMeditation Load (6.9ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (6.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (6.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (2.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 292ms (Views: 265.4ms | ActiveRecord: 24.9ms | Allocations: 8801)
+
+
+Started POST "/comments" for ::1 at 2021-02-15 12:21:36 -0600
+Processing by CommentsController#create as */*
+  Parameters: {"meditation_id"=>1, "content"=>"sdfd", "comment"=>{"content"=>"sdfd", "meditation_id"=>1}}
+  [1m[36mMeditation Load (1.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (5.0ms)[0m  [1m[32mINSERT INTO "comments" ("content", "meditation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "sdfd"], ["meditation_id", 1], ["created_at", "2021-02-15 18:21:36.503425"], ["updated_at", "2021-02-15 18:21:36.503425"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (39.6ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 82ms (Views: 3.5ms | ActiveRecord: 46.0ms | Allocations: 5048)
+
+
+Started POST "/comments" for ::1 at 2021-02-15 12:21:38 -0600
+Processing by CommentsController#create as */*
+  Parameters: {"meditation_id"=>1, "content"=>"sdfdsdfs", "comment"=>{"content"=>"sdfdsdfs", "meditation_id"=>1}}
+  [1m[36mMeditation Load (0.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (7.3ms)[0m  [1m[32mINSERT INTO "comments" ("content", "meditation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "sdfdsdfs"], ["meditation_id", 1], ["created_at", "2021-02-15 18:21:38.642160"], ["updated_at", "2021-02-15 18:21:38.642160"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (41.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 74ms (Views: 2.3ms | ActiveRecord: 50.2ms | Allocations: 4157)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 12:21:52 -0600
+Started GET "/comments" for ::1 at 2021-02-15 12:21:52 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (4.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (4.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mComment Load (51.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 420ms (Views: 0.4ms | ActiveRecord: 3.2ms | Allocations: 8865)
+
+
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 463ms (Views: 397.0ms | ActiveRecord: 64.6ms | Allocations: 9930)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 14:01:43 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Started GET "/comments" for ::1 at 2021-02-15 14:01:44 -0600
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (47.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (2.6ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (7.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mMeditation Load (141.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (1.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 449ms (Views: 0.5ms | ActiveRecord: 190.2ms | Allocations: 14140)
+
+
+Completed 200 OK in 210ms (Views: 184.3ms | ActiveRecord: 14.0ms | Allocations: 7704)
+
+
+Started POST "/comments" for ::1 at 2021-02-15 14:03:01 -0600
+Processing by CommentsController#create as */*
+  Parameters: {"meditation_id"=>1, "content"=>"fdgdrger", "comment"=>{"content"=>"fdgdrger", "meditation_id"=>1}}
+  [1m[36mMeditation Load (4.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (11.0ms)[0m  [1m[32mINSERT INTO "comments" ("content", "meditation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "fdgdrger"], ["meditation_id", 1], ["created_at", "2021-02-15 20:03:01.769849"], ["updated_at", "2021-02-15 20:03:01.769849"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (143.8ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 228ms (Views: 6.3ms | ActiveRecord: 159.3ms | Allocations: 6162)
+
+
+Started POST "/comments" for ::1 at 2021-02-15 14:03:12 -0600
+Processing by CommentsController#create as */*
+  Parameters: {"meditation_id"=>1, "content"=>"hi", "comment"=>{"content"=>"hi", "meditation_id"=>1}}
+  [1m[36mMeditation Load (1.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.5ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (86.8ms)[0m  [1m[32mINSERT INTO "comments" ("content", "meditation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "hi"], ["meditation_id", 1], ["created_at", "2021-02-15 20:03:12.811506"], ["updated_at", "2021-02-15 20:03:12.811506"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (89.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 346ms (Views: 5.2ms | ActiveRecord: 178.3ms | Allocations: 8221)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 14:03:52 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (6.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (10.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (2.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 717ms (Views: 692.0ms | ActiveRecord: 22.8ms | Allocations: 7325)
+
+
+Started GET "/comments" for ::1 at 2021-02-15 14:03:53 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 140ms (Views: 6.8ms | ActiveRecord: 2.8ms | Allocations: 5453)
+
+
+  [1m[35m (1.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (1.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  [1m[35m (36.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (21.5ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "meditations"[0m
+  [1m[35m (9.6ms)[0m  [1m[35mCREATE TABLE "meditations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "duration" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "content" text)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acomments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_meditation_id" ON "acomments" ("meditation_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acomments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "comments"[0m
+  [1m[35m (1.6ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_509522b747"
+FOREIGN KEY ("meditation_id")
+  REFERENCES "meditations" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "acomments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "acomments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (19.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (13.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210204234602)[0m
+  [1m[35m (13.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210125172902),
+(20210125172919),
+(20210201195530),
+(20210202161306),
+(20210202161527);
+
+[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-15 20:05:11.340682"], ["updated_at", "2021-02-15 20:05:11.340682"]]
+  [1m[35m (8.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "9d3e2d80999ed474fef289186d349df66e7b77c6"], ["created_at", "2021-02-15 20:05:11.368677"], ["updated_at", "2021-02-15 20:05:11.368677"]]
+  [1m[35m (8.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  [1m[35m (12.1ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (0.6ms)[0m  [1m[35mDROP TABLE IF EXISTS "meditations"[0m
+  [1m[35m (9.4ms)[0m  [1m[35mCREATE TABLE "meditations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "duration" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "content" text)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acomments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_meditation_id" ON "acomments" ("meditation_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acomments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "comments"[0m
+  [1m[35m (1.3ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_509522b747"
+FOREIGN KEY ("meditation_id")
+  REFERENCES "meditations" ("id")
+)[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "acomments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mDROP TABLE "acomments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (10.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (9.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (12.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210204234602)[0m
+  [1m[35m (12.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210125172902),
+(20210125172919),
+(20210201195530),
+(20210202161306),
+(20210202161527);
+
+[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-15 20:05:11.557201"], ["updated_at", "2021-02-15 20:05:11.557201"]]
+  [1m[35m (14.5ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.2ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-02-15 20:05:11.589501"], ["key", "environment"]]
+  [1m[35m (12.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (4.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "9d3e2d80999ed474fef289186d349df66e7b77c6"], ["created_at", "2021-02-15 20:05:11.613426"], ["updated_at", "2021-02-15 20:05:11.613426"]]
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMeditation Destroy (0.2ms)[0m  [1m[31mDELETE FROM "meditations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (1.4ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Breathing    "], ["duration", "3"], ["created_at", "2021-02-15 20:05:11.706616"], ["updated_at", "2021-02-15 20:05:11.706616"], ["content", "Inhale/Exhale/Inhale/Exhale"]]
+  [1m[35m (9.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (1.2ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Handling Anxiety    "], ["duration", "5"], ["created_at", "2021-02-15 20:05:11.723854"], ["updated_at", "2021-02-15 20:05:11.723854"], ["content", "Begin in a comfortable seated position/Feel rooted, safe, and comfortable through your seat/\n   Once you’re settled, soften your gaze/Relax the muscles in your face/\n   Take a deep breath in through your nose/And out through your mouth/\n   1/2/3/4/\n   As you inhale, imagine that you are breathing in calmness/As you exhale, imagine that you are breathing out your anxiety/\n   Inhale peace and clarity/Exhale stress and worry/\n   Inhale/Feel your anxiety slip away with each exhale/\n   Inhale/Exhale/\n   Your mind may drift to feelings of worry/This is okay, be mindful/\n   Without judgment, gently bring your attention back to the breath/Notice how calm you feel as you sit and breathe"]]
+  [1m[35m (28.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (6.8ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pain Management    "], ["duration", "3"], ["created_at", "2021-02-15 20:05:11.762860"], ["updated_at", "2021-02-15 20:05:11.762860"], ["content", "Take a breath in/Exhale/Settle into a comfortable position/Notice how you are feeling in this moment/Observe your body and mind/\n   Pain management begins with observation./Where is most of your tension stored?/Where is your pain located?/What part of your body is most relaxed?/Take a deep breath in.... now exhale./\n   Breathe in.... and out./Continue to breathe slowly, smoothly./Now continue the pain management relaxation with a passive attitude of observing. Do not try to make anything happen. \n   Notice how your whole body feels. Passively observe, not trying to change anything. Simply take note of how your body feels. Take a few moments now to think about the pain you experience.\n   You may not be in pain right now. Just observe the state of your pain in this moment. The way your body feels is always changing. The way you feel is different from moment to moment. \n   A moment from now, you will feel slightly different from the way you feel right now. Just observe. Observe as each moment passes. \n   Although pain is unwanted and difficult to tolerate, try for the next few moments to regard your pain with acceptance. \n   Accept the way you are feeling right now physically and emotionally..... whether positive or negative..... allow your body and mind to just"]]
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (1.7ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Affirmations"], ["duration", "3"], ["created_at", "2021-02-15 20:05:11.793069"], ["updated_at", "2021-02-15 20:05:11.793069"]]
+  [1m[35m (19.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (1.4ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["title", "Breathe"], ["duration", "1"], ["created_at", "2021-02-15 20:05:11.829545"], ["updated_at", "2021-02-15 20:05:11.829545"]]
+  [1m[35m (13.8ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/meditations" for ::1 at 2021-02-15 14:05:21 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MeditationsController#index as */*
+Started GET "/comments" for ::1 at 2021-02-15 14:05:22 -0600
+  [1m[36mMeditation Load (1.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 245ms (Views: 165.4ms | ActiveRecord: 15.0ms | Allocations: 13390)
+
+
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 23ms (Views: 0.4ms | ActiveRecord: 4.3ms | Allocations: 1715)
+
+
+Started POST "/comments" for ::1 at 2021-02-15 14:12:13 -0600
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#create as */*
+  Parameters: {"meditation_id"=>2, "content"=>"sfg", "comment"=>{"content"=>"sfg", "meditation_id"=>2}}
+  [1m[36mMeditation Load (12.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (5.7ms)[0m  [1m[32mINSERT INTO "comments" ("content", "meditation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "sfg"], ["meditation_id", 2], ["created_at", "2021-02-15 20:12:13.714208"], ["updated_at", "2021-02-15 20:12:13.714208"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (63.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 362ms (Views: 3.5ms | ActiveRecord: 94.3ms | Allocations: 13973)
+
+
+Started POST "/comments" for ::1 at 2021-02-15 14:12:15 -0600
+Processing by CommentsController#create as */*
+  Parameters: {"meditation_id"=>2, "content"=>"sfge", "comment"=>{"content"=>"sfge", "meditation_id"=>2}}
+  [1m[36mMeditation Load (0.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mCACHE Meditation Load (0.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (6.9ms)[0m  [1m[32mINSERT INTO "comments" ("content", "meditation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "sfge"], ["meditation_id", 2], ["created_at", "2021-02-15 20:12:15.863950"], ["updated_at", "2021-02-15 20:12:15.863950"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (55.9ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 142ms (Views: 2.4ms | ActiveRecord: 64.1ms | Allocations: 6565)
+
+
+Started POST "/comments" for ::1 at 2021-02-15 14:12:17 -0600
+Processing by CommentsController#create as */*
+  Parameters: {"meditation_id"=>2, "content"=>"sdf", "comment"=>{"content"=>"sdf", "meditation_id"=>2}}
+  [1m[36mMeditation Load (1.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mCACHE Meditation Load (0.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (6.2ms)[0m  [1m[32mINSERT INTO "comments" ("content", "meditation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "sdf"], ["meditation_id", 2], ["created_at", "2021-02-15 20:12:17.517156"], ["updated_at", "2021-02-15 20:12:17.517156"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (58.1ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 159ms (Views: 16.3ms | ActiveRecord: 65.6ms | Allocations: 4989)
+
+
+Started GET "/comments" for ::1 at 2021-02-15 14:12:20 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (4.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 269ms (Views: 2.7ms | ActiveRecord: 5.1ms | Allocations: 3851)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 14:12:21 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (2.9ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (4.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (6.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (3.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 558ms (Views: 539.2ms | ActiveRecord: 17.7ms | Allocations: 6999)
+
+
+Started POST "/comments" for ::1 at 2021-02-15 14:15:18 -0600
+Processing by CommentsController#create as */*
+  Parameters: {"meditation_id"=>2, "content"=>"wetw", "comment"=>{"content"=>"wetw", "meditation_id"=>2}}
+  [1m[36mMeditation Load (0.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (2.6ms)[0m  [1m[32mINSERT INTO "comments" ("content", "meditation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "wetw"], ["meditation_id", 2], ["created_at", "2021-02-15 20:15:18.706244"], ["updated_at", "2021-02-15 20:15:18.706244"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (16.4ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 41ms (Views: 1.4ms | ActiveRecord: 19.7ms | Allocations: 5403)
+
+
+Started POST "/comments" for ::1 at 2021-02-15 14:15:22 -0600
+Processing by CommentsController#create as */*
+  Parameters: {"meditation_id"=>2, "content"=>"ghj", "comment"=>{"content"=>"ghj", "meditation_id"=>2}}
+  [1m[36mMeditation Load (1.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (19.0ms)[0m  [1m[32mINSERT INTO "comments" ("content", "meditation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "ghj"], ["meditation_id", 2], ["created_at", "2021-02-15 20:15:22.401189"], ["updated_at", "2021-02-15 20:15:22.401189"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (34.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 102ms (Views: 3.1ms | ActiveRecord: 55.1ms | Allocations: 5038)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 14:15:28 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Started GET "/comments" for ::1 at 2021-02-15 14:15:28 -0600
+  [1m[36mComment Load (37.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (4.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (3.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 814ms (Views: 755.0ms | ActiveRecord: 48.9ms | Allocations: 7424)
+
+
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (11.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 184ms (Views: 0.4ms | ActiveRecord: 13.8ms | Allocations: 5488)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 14:18:28 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (12.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (10.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (2.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 377ms (Views: 347.2ms | ActiveRecord: 26.8ms | Allocations: 7321)
+
+
+Started GET "/comments" for ::1 at 2021-02-15 14:18:28 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (8.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (0.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (10.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 358ms (Views: 0.3ms | ActiveRecord: 19.6ms | Allocations: 5516)
+
+
+Started POST "/comments" for ::1 at 2021-02-15 14:22:30 -0600
+Processing by CommentsController#create as */*
+  Parameters: {"meditation_id"=>1, "content"=>"dfdf", "comment"=>{"content"=>"dfdf", "meditation_id"=>1}}
+  [1m[36mMeditation Load (2.6ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.3ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (11.7ms)[0m  [1m[32mINSERT INTO "comments" ("content", "meditation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "dfdf"], ["meditation_id", 1], ["created_at", "2021-02-15 20:22:30.755827"], ["updated_at", "2021-02-15 20:22:30.755827"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (74.5ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 174ms (Views: 3.8ms | ActiveRecord: 89.3ms | Allocations: 5087)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 14:22:42 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (3.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (16.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (2.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (5.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (4.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 282ms (Views: 247.2ms | ActiveRecord: 33.7ms | Allocations: 7125)
+
+
+Started GET "/comments" for ::1 at 2021-02-15 14:22:42 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (13.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (0.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 119ms (Views: 0.4ms | ActiveRecord: 15.7ms | Allocations: 6460)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 15:26:09 -0600
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (15.5ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+Started GET "/comments" for ::1 at 2021-02-15 15:26:10 -0600
+  [1m[35m (2.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (2.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (0.9ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (9.3ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (4.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.1ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (0.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 543ms (Views: 509.2ms | ActiveRecord: 32.7ms | Allocations: 14934)
+
+
+Completed 200 OK in 434ms (Views: 28.3ms | ActiveRecord: 4.2ms | Allocations: 13612)
+
+
+Started POST "/comments" for ::1 at 2021-02-15 15:27:13 -0600
+Processing by CommentsController#create as */*
+  Parameters: {"meditation_id"=>1, "content"=>"iugjhg", "comment"=>{"content"=>"iugjhg", "meditation_id"=>1}}
+  [1m[36mMeditation Load (0.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (4.3ms)[0m  [1m[32mINSERT INTO "comments" ("content", "meditation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "iugjhg"], ["meditation_id", 1], ["created_at", "2021-02-15 21:27:13.872679"], ["updated_at", "2021-02-15 21:27:13.872679"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (27.2ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 62ms (Views: 3.9ms | ActiveRecord: 32.4ms | Allocations: 5254)
+
+
+Started POST "/comments" for ::1 at 2021-02-15 15:27:15 -0600
+Processing by CommentsController#create as */*
+  Parameters: {"meditation_id"=>1, "content"=>"iugjhglk", "comment"=>{"content"=>"iugjhglk", "meditation_id"=>1}}
+  [1m[36mMeditation Load (1.8ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:13:in `create'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (0.4ms)[0m  [1m[36mbegin transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[36mComment Create (7.6ms)[0m  [1m[32mINSERT INTO "comments" ("content", "meditation_id", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["content", "iugjhglk"], ["meditation_id", 1], ["created_at", "2021-02-15 21:27:15.088795"], ["updated_at", "2021-02-15 21:27:15.088795"]]
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+  [1m[35m (37.7ms)[0m  [1m[36mcommit transaction[0m
+  ↳ app/controllers/comments_controller.rb:14:in `create'
+Completed 200 OK in 78ms (Views: 1.4ms | ActiveRecord: 47.5ms | Allocations: 4146)
+
+
+Started GET "/meditations" for ::1 at 2021-02-15 15:27:19 -0600
+Processing by MeditationsController#index as */*
+  [1m[36mMeditation Load (1.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Started GET "/comments" for ::1 at 2021-02-15 15:27:19 -0600
+Processing by CommentsController#index as */*
+  [1m[36mComment Load (0.9ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.4ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.2ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 2], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mMeditation Load (1.7ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mCACHE Meditation Load (0.1ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 284ms (Views: 278.1ms | ActiveRecord: 5.1ms | Allocations: 15023)
+
+
+  [1m[36mCACHE Meditation Load (0.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations" WHERE "meditations"."id" = ? LIMIT ?[0m  [["id", 1], ["LIMIT", 1]]
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 234ms (Views: 0.2ms | ActiveRecord: 4.5ms | Allocations: 13641)
+
+
