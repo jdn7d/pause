@@ -24641,3 +24641,313 @@ Completed 200 OK in 284ms (Views: 278.1ms | ActiveRecord: 5.1ms | Allocations: 1
 Completed 200 OK in 234ms (Views: 0.2ms | ActiveRecord: 4.5ms | Allocations: 13641)
 
 
+  [1m[35m (24.6ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.8ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  [1m[35m (20.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (19.4ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "meditations"[0m
+  [1m[35m (18.7ms)[0m  [1m[35mCREATE TABLE "meditations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "duration" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "content" text)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acomments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_meditation_id" ON "acomments" ("meditation_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acomments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "comments"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_509522b747"
+FOREIGN KEY ("meditation_id")
+  REFERENCES "meditations" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "acomments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mDROP TABLE "acomments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (26.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210204234602)[0m
+  [1m[35m (14.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210125172902),
+(20210125172919),
+(20210201195530),
+(20210202161306),
+(20210202161527);
+
+[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (2.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-18 15:38:31.814556"], ["updated_at", "2021-02-18 15:38:31.814556"]]
+  [1m[35m (12.1ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "9d3e2d80999ed474fef289186d349df66e7b77c6"], ["created_at", "2021-02-18 15:38:31.848043"], ["updated_at", "2021-02-18 15:38:31.848043"]]
+  [1m[35m (11.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.7ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (14.6ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (1.0ms)[0m  [1m[35mDROP TABLE IF EXISTS "meditations"[0m
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE "meditations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "duration" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "content" text)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acomments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_meditation_id" ON "acomments" ("meditation_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acomments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "comments"[0m
+  [1m[35m (1.8ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_509522b747"
+FOREIGN KEY ("meditation_id")
+  REFERENCES "meditations" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "acomments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "acomments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (13.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (14.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210204234602)[0m
+  [1m[35m (13.9ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210125172902),
+(20210125172919),
+(20210201195530),
+(20210202161306),
+(20210202161527);
+
+[0m
+  [1m[35m (13.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-18 15:38:32.101079"], ["updated_at", "2021-02-18 15:38:32.101079"]]
+  [1m[35m (12.3ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-02-18 15:38:32.127150"], ["key", "environment"]]
+  [1m[35m (10.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "9d3e2d80999ed474fef289186d349df66e7b77c6"], ["created_at", "2021-02-18 15:38:32.152174"], ["updated_at", "2021-02-18 15:38:32.152174"]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMeditation Destroy (0.3ms)[0m  [1m[31mDELETE FROM "meditations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (2.0ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Breathing"], ["duration", "3"], ["created_at", "2021-02-18 15:38:32.350619"], ["updated_at", "2021-02-18 15:38:32.350619"], ["content", "Inhale through your nose/Exhale through your mouth/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale"]]
+  [1m[35m (12.6ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (1.9ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Handling Anxiety    "], ["duration", "5"], ["created_at", "2021-02-18 15:38:32.374504"], ["updated_at", "2021-02-18 15:38:32.374504"], ["content", "Begin in a comfortable seated position/Feel rooted, safe, and comfortable through your seat/Once you’re settled, soften your gaze/Relax the muscles in your face/Take a deep breath in through your nose/And out through your mouth/1/2/3/4/As you inhale, imagine that you are breathing in calmness/As you exhale, imagine that you are breathing out your anxiety/Inhale peace and clarity/Exhale stress and worry/Inhale/Feel your anxiety slip away with each exhale/Inhale/Exhale/Your mind may drift to feelings of worry/This is okay, be mindful/Without judgment, gently bring your attention back to the breath/Notice how calm you feel as you sit and breathe"]]
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (1.9ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pain Management    "], ["duration", "3"], ["created_at", "2021-02-18 15:38:32.397339"], ["updated_at", "2021-02-18 15:38:32.397339"], ["content", "Take a breath in/Exhale/Settle into a comfortable position/Notice how you are feeling in this moment/Observe your body and mind/Pain management begins with observation./Where is most of your tension stored?/Where is your pain located?/What part of your body is most relaxed?/Take a deep breath in.... now exhale./Breathe in.... and out./Continue to breathe slowly./Now continue with a passive attitude of observing./Notice how your whole body feels/Passively observe any pain/Simply take note of how your body feels/Focus on the pain you have/Pinpoint the areas of you body/You may not be in pain right now./Just observe the state of your pain in this moment./The way your body feels is always changing./Just observe./Observe as each moment passes./Although pain is unwanted and difficult to tolerate,/Try for the next few breaths to regard your pain with acceptance./Accept the way you are feeling right now physically and emotionally/..... whether positive or negative..... allow your body and mind to just"]]
+  [1m[35m (12.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (2.3ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Gratitude"], ["duration", "2"], ["created_at", "2021-02-18 15:38:32.420994"], ["updated_at", "2021-02-18 15:38:32.420994"], ["content", "Begin in a comfortable seated position./Feel grounded through your seat, and when you’re settled, close your eyes./This guided meditation script will help you feel more gratitude./Start to pay attention to your breath by taking mindful breaths in through your nose and out through your mouth./Breathe in for the count of four and out for the count of four./Start to think about how lucky you are./What are you grateful for?/Take a moment to name at least three things you are grateful for./As you inhale, send extra gratitude to these things./If your mind starts to wander to other things, simply be an observer of your thoughts and do not judge them./Then, bring attention back to your breath and the things you’re grateful for./Keep breathing. All you need to do right now is breathe and drench yourself in gratitude./Notice how practicing mindfulness and gratitude can help you feel happier./Open your eyes and take this amazing feeling of gratitude with you throughout your day."]]
+  [1m[35m (12.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (1.8ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Test"], ["duration", "1"], ["created_at", "2021-02-18 15:38:32.448031"], ["updated_at", "2021-02-18 15:38:32.448031"], ["content", "1,2,3"]]
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/meditations" for ::1 at 2021-02-18 09:48:52 -0600
+Started GET "/comments" for ::1 at 2021-02-18 09:48:52 -0600
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#index as */*
+  [1m[35m (1.0ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by CommentsController#index as */*
+  [1m[36mMeditation Load (1.0ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+Completed 200 OK in 368ms (Views: 0.2ms | ActiveRecord: 1.9ms | Allocations: 9640)
+
+
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.6ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.5ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.4ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 471ms (Views: 409.4ms | ActiveRecord: 7.0ms | Allocations: 17311)
+
+
+  [1m[35m (1.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ?[0m  [["key", "environment"]]
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  [1m[35m (26.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (19.4ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (0.9ms)[0m  [1m[35mDROP TABLE IF EXISTS "meditations"[0m
+  [1m[35m (19.1ms)[0m  [1m[35mCREATE TABLE "meditations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "duration" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "content" text)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.3ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acomments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_meditation_id" ON "acomments" ("meditation_id")[0m
+  [1m[35m (0.2ms)[0m  [1m[32mINSERT INTO "acomments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "comments"[0m
+  [1m[35m (2.6ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35m (0.5ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_509522b747"
+FOREIGN KEY ("meditation_id")
+  REFERENCES "meditations" ("id")
+)[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "acomments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "acomments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (14.1ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (13.2ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210204234602)[0m
+  [1m[35m (13.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210125172902),
+(20210125172919),
+(20210201195530),
+(20210202161306),
+(20210202161527);
+
+[0m
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.8ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-18 15:49:22.810599"], ["updated_at", "2021-02-18 15:49:22.810599"]]
+  [1m[35m (11.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "9d3e2d80999ed474fef289186d349df66e7b77c6"], ["created_at", "2021-02-18 15:49:22.842411"], ["updated_at", "2021-02-18 15:49:22.842411"]]
+  [1m[35m (11.0ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.5ms)[0m  [1m[35mDROP TABLE IF EXISTS "comments"[0m
+  [1m[35m (13.8ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "content" text, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (0.8ms)[0m  [1m[35mDROP TABLE IF EXISTS "meditations"[0m
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "meditations" ("id" integer PRIMARY KEY AUTOINCREMENT NOT NULL, "title" varchar, "duration" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, "content" text)[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA defer_foreign_keys = ON[0m
+  [1m[35m (0.2ms)[0m  [1m[35mPRAGMA foreign_keys = OFF[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCREATE TEMPORARY TABLE "acomments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "tindex_acomments_on_meditation_id" ON "acomments" ("meditation_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "acomments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "comments"[0m
+  [1m[35m (1.9ms)[0m  [1m[35mDROP TABLE "comments"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCREATE TABLE "comments" ("id" integer NOT NULL PRIMARY KEY, "content" text DEFAULT NULL, "meditation_id" integer NOT NULL, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL, CONSTRAINT "fk_rails_509522b747"
+FOREIGN KEY ("meditation_id")
+  REFERENCES "meditations" ("id")
+)[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCREATE  INDEX "index_comments_on_meditation_id" ON "comments" ("meditation_id")[0m
+  [1m[35m (0.1ms)[0m  [1m[32mINSERT INTO "comments" ("id","content","meditation_id","created_at","updated_at")
+                     SELECT "id","content","meditation_id","created_at","updated_at" FROM "acomments"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mDROP TABLE "acomments"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA defer_foreign_keys = 0[0m
+  [1m[35m (0.1ms)[0m  [1m[35mPRAGMA foreign_keys = 1[0m
+  [1m[35m (10.7ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" varchar NOT NULL PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (13.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20210204234602)[0m
+  [1m[35m (13.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20210125172902),
+(20210125172919),
+(20210201195530),
+(20210202161306),
+(20210202161527);
+
+[0m
+  [1m[35m (14.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" varchar NOT NULL PRIMARY KEY, "value" varchar, "created_at" datetime(6) NOT NULL, "updated_at" datetime(6) NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "environment"], ["value", "development"], ["created_at", "2021-02-18 15:49:23.076488"], ["updated_at", "2021-02-18 15:49:23.076488"]]
+  [1m[35m (11.4ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.6ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Update (1.7ms)[0m  [1m[33mUPDATE "ar_internal_metadata" SET "value" = ?, "updated_at" = ? WHERE "ar_internal_metadata"."key" = ?[0m  [["value", "test"], ["updated_at", "2021-02-18 15:49:23.103392"], ["key", "environment"]]
+  [1m[35m (11.2ms)[0m  [1m[36mcommit transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = ? LIMIT ?[0m  [["key", "schema_sha1"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mActiveRecord::InternalMetadata Create (1.9ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES (?, ?, ?, ?)[0m  [["key", "schema_sha1"], ["value", "9d3e2d80999ed474fef289186d349df66e7b77c6"], ["created_at", "2021-02-18 15:49:23.129064"], ["updated_at", "2021-02-18 15:49:23.129064"]]
+  [1m[35m (12.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[36mMeditation Destroy (0.5ms)[0m  [1m[31mDELETE FROM "meditations"[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (3.3ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Breathing"], ["duration", "3"], ["created_at", "2021-02-18 15:49:23.232559"], ["updated_at", "2021-02-18 15:49:23.232559"], ["content", "Inhale through your nose/Exhale through your mouth/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale/Inhale/Exhale"]]
+  [1m[35m (18.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (2.2ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Handling Anxiety    "], ["duration", "5"], ["created_at", "2021-02-18 15:49:23.266377"], ["updated_at", "2021-02-18 15:49:23.266377"], ["content", "Begin in a comfortable seated position/Feel rooted, safe, and comfortable through your seat/Once you’re settled, soften your gaze/Relax the muscles in your face/Take a deep breath in through your nose/And out through your mouth/1/2/3/4/As you inhale, imagine that you are breathing in calmness/As you exhale, imagine that you are breathing out your anxiety/Inhale peace and clarity/Exhale stress and worry/Inhale/Feel your anxiety slip away with each exhale/Inhale/Exhale/Your mind may drift to feelings of worry/This is okay, be mindful/Without judgment, gently bring your attention back to the breath/Notice how calm you feel as you sit and breathe"]]
+  [1m[35m (16.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (2.3ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Pain Management    "], ["duration", "3"], ["created_at", "2021-02-18 15:49:23.296546"], ["updated_at", "2021-02-18 15:49:23.296546"], ["content", "Take a breath in/Exhale/Settle into a comfortable position/Notice how you are feeling in this moment/Observe your body and mind/Pain management begins with observation./Where is most of your tension stored?/Where is your pain located?/What part of your body is most relaxed?/Take a deep breath in.... now exhale./Breathe in.... and out./Continue to breathe slowly./Now continue with a passive attitude of observing./Notice how your whole body feels/Passively observe any pain/Simply take note of how your body feels/Focus on the pain you have/Pinpoint the areas of you body/You may not be in pain right now./Just observe the state of your pain in this moment./The way your body feels is always changing./Just observe./Observe as each moment passes./Although pain is unwanted and difficult to tolerate,/Try for the next few breaths to regard your pain with acceptance./Accept the way you are feeling right now physically and emotionally/..... whether positive or negative..... allow your body and mind to just"]]
+  [1m[35m (16.9ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.2ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (2.2ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Gratitude"], ["duration", "2"], ["created_at", "2021-02-18 15:49:23.332831"], ["updated_at", "2021-02-18 15:49:23.332831"], ["content", "Begin in a comfortable seated position./Feel grounded through your seat, and when you’re settled, close your eyes./This guided meditation script will help you feel more gratitude./Start to pay attention to your breath by taking mindful breaths in through your nose and out through your mouth./Breathe in for the count of four and out for the count of four./Start to think about how lucky you are./What are you grateful for?/Take a moment to name at least three things you are grateful for./As you inhale, send extra gratitude to these things./If your mind starts to wander to other things, simply be an observer of your thoughts and do not judge them./Then, bring attention back to your breath and the things you’re grateful for./Keep breathing. All you need to do right now is breathe and drench yourself in gratitude./Notice how practicing mindfulness and gratitude can help you feel happier./Open your eyes and take this amazing feeling of gratitude with you throughout your day."]]
+  [1m[35m (15.8ms)[0m  [1m[36mcommit transaction[0m
+  [1m[35m (0.1ms)[0m  [1m[36mbegin transaction[0m
+  [1m[36mMeditation Create (2.2ms)[0m  [1m[32mINSERT INTO "meditations" ("title", "duration", "created_at", "updated_at", "content") VALUES (?, ?, ?, ?, ?)[0m  [["title", "Test"], ["duration", "1"], ["created_at", "2021-02-18 15:49:23.362570"], ["updated_at", "2021-02-18 15:49:23.362570"], ["content", "1/2/3"]]
+  [1m[35m (15.4ms)[0m  [1m[36mcommit transaction[0m
+Started GET "/comments" for ::1 at 2021-02-18 09:56:44 -0600
+Started GET "/meditations" for ::1 at 2021-02-18 09:56:44 -0600
+  [1m[35m (2.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT sqlite_version(*)[0m
+  [1m[35m (1.2ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT "schema_migrations"."version" FROM "schema_migrations" ORDER BY "schema_migrations"."version" ASC[0m
+Processing by MeditationsController#index as */*
+Processing by CommentsController#index as */*
+  [1m[36mMeditation Load (1.3ms)[0m  [1m[34mSELECT "meditations".* FROM "meditations"[0m
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments"[0m
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  ↳ app/controllers/comment_serializer.rb:8:in `to_serialized_json'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 1]]
+Completed 200 OK in 53ms (Views: 0.2ms | ActiveRecord: 0.7ms | Allocations: 9034)
+
+
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.8ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 2]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (0.7ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 3]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.0ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 4]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+  [1m[36mComment Load (1.2ms)[0m  [1m[34mSELECT "comments".* FROM "comments" WHERE "comments"."meditation_id" = ?[0m  [["meditation_id", 5]]
+  ↳ app/controllers/meditations_controller.rb:4:in `index'
+Completed 200 OK in 105ms (Views: 86.4ms | ActiveRecord: 10.5ms | Allocations: 15981)
+
+
