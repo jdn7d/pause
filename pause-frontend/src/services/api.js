@@ -44,11 +44,4 @@ class API {
          body: JSON.stringify({meditation_id: meditationId, content: content }) // add other attributes
       }).then(this.parseJSON)
    }
-   
-   deleteComment = (id) => {
-      return fetch(this.commentURL + `/${id}`, {
-         method: "DELETE", 
-         headers: this.headers 
-      }).then(this.parseJSON)
-   }
 }

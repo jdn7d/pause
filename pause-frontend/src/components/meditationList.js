@@ -39,10 +39,10 @@ class MeditationList {
             
             medDisplay.innerText = parsedContent[i["count"]]
             
-             if (i["count"]%2 === 0) {
+            if (i["count"]%2 === 0) {
                expand()     
              }
-             else {
+            else {
                shrink() 
              }
             i["count"] +=1
@@ -110,7 +110,7 @@ class MeditationList {
 
    
       // Create list of meditations as buttons
-      const button = document.createElement("menuOptions")
+      const button = document.createElement("menu-options")
       button.innerText = `${meditation.title}`
       
       meditationsList.appendChild(button) 
